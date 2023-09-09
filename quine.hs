@@ -21,7 +21,7 @@ main = do
                 "check" -> do
                     res <- checkQuine (args !! 1)
                     case res of
-                        True -> putStrLn "Oh Baby, a Quine!"
+                        True -> putStrLn "It is a Quine!"
                         _    -> putStrLn "Oh no, not quite Quine :("
                 "make" -> do
                     _ <- makeQuine (args !! 1) (args !! 2)
@@ -201,7 +201,7 @@ x0 = "module Main where\n\
 \                \"check\" -> do\n\
 \                    res <- checkQuine (args !! 1)\n\
 \                    case res of\n\
-\                        True -> putStrLn \"Oh Baby, a Quine!\"\n\
+\                        True -> putStrLn \"It is a Quine!\"\n\
 \                        _    -> putStrLn \"Oh no, not quite Quine :(\"\n\
 \                \"make\" -> do\n\
 \                    _ <- makeQuine (args !! 1) (args !! 2)\n\
