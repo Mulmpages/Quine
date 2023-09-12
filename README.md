@@ -1,4 +1,4 @@
-# Quine_Maker
+# Quine-Maker
 
 Haskell command-line tool for creating quines.
 
