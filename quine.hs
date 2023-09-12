@@ -14,19 +14,18 @@ main = do
             putStr x0
             putStr $ "\"" ++ concatMap lit0 x0 ++ "\""
         else do
-
-        if null args
-            then info
-            else case args !! 0 of
-                "check" -> do
-                    res <- checkQuine (args !! 1)
-                    case res of
-                        True -> putStrLn "It is a Quine!"
-                        _    -> putStrLn "Oh no, not quite Quine :("
-                "make" -> do
-                    _ <- makeQuine (args !! 1) (args !! 2)
-                    putStrLn "Quintessence: Quite queerly quined!"
-                _ -> do info
+            if null args
+                then info
+                else case args !! 0 of
+                    "check" -> do
+                        res <- checkQuine (args !! 1)
+                        case res of
+                            True -> putStrLn "It is a Quine!"
+                            _    -> putStrLn "Oh no, not quite Quine :("
+                    "make" -> do
+                        _ <- makeQuine (args !! 1) (args !! 2)
+                        putStrLn "Quintessence: Quite queerly quined!"
+                    _ -> do info
 
 info :: IO ()
 info = do
@@ -122,7 +121,7 @@ makeNewStr nameX nameArgs nameProc nameLit pre post =
     ++ nameX ++ " :: String\n"
     ++ nameX ++ " = "
 
--- Funktioniert nur, wenn das Programm folgendermaen beginnt:
+-- Funktioniert nur, wenn das Programm folgendermaßen beginnt:
 -- ...
 -- main = do
 --     args <- getArgs
@@ -194,19 +193,18 @@ x0 = "module Main where\n\
 \            putStr x0\n\
 \            putStr $ \"\\\"\" ++ concatMap lit0 x0 ++ \"\\\"\"\n\
 \        else do\n\
-\\n\
-\        if null args\n\
-\            then info\n\
-\            else case args !! 0 of\n\
-\                \"check\" -> do\n\
-\                    res <- checkQuine (args !! 1)\n\
-\                    case res of\n\
-\                        True -> putStrLn \"It is a Quine!\"\n\
-\                        _    -> putStrLn \"Oh no, not quite Quine :(\"\n\
-\                \"make\" -> do\n\
-\                    _ <- makeQuine (args !! 1) (args !! 2)\n\
-\                    putStrLn \"Quintessence: Quite queerly quined!\"\n\
-\                _ -> do info\n\
+\            if null args\n\
+\                then info\n\
+\                else case args !! 0 of\n\
+\                    \"check\" -> do\n\
+\                        res <- checkQuine (args !! 1)\n\
+\                        case res of\n\
+\                            True -> putStrLn \"It is a Quine!\"\n\
+\                            _    -> putStrLn \"Oh no, not quite Quine :(\"\n\
+\                    \"make\" -> do\n\
+\                        _ <- makeQuine (args !! 1) (args !! 2)\n\
+\                        putStrLn \"Quintessence: Quite queerly quined!\"\n\
+\                    _ -> do info\n\
 \\n\
 \info :: IO ()\n\
 \info = do\n\
@@ -302,7 +300,7 @@ x0 = "module Main where\n\
 \    ++ nameX ++ \" :: String\\n\"\n\
 \    ++ nameX ++ \" = \"\n\
 \\n\
-\-- Funktioniert nur, wenn das Programm folgendermaen beginnt:\n\
+\-- Funktioniert nur, wenn das Programm folgendermaßen beginnt:\n\
 \-- ...\n\
 \-- main = do\n\
 \--     args <- getArgs\n\
